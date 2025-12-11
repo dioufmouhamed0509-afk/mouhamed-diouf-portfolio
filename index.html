@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio – Mouhamed Diouf</title>
+    <link rel="icon" href="images/maphoto.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body class="fade-in">
+    <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+</div>
+
+    <header>
+        <button id="mode-toggle" title="Mode Sombre/Clair">🌙</button>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#formation">Formations</a></li>
+                <li><a href="#experiences">Expériences</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#certificats">Certificats</a></li>
+                <li><a href="#interets">Intérêts</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil" class="section-accueil">
+        <h1 class="gradient-title">BIENVENUE SUR MON PORTFOLIO</h1>
+        <h1>Mouhamed DIOUF</h1>
+        <h2 class="sous-titre-anime">Je suis <span class="typing-text"></span></h2>
+        <p>Passionné de géographie avec une solide formation en analyse spatiale et en cartographie. Je recherche des opportunités pour mettre mes compétences au service d’un projet passionnant.</p>
+    </section>
+
+    <section id="a-propos">
+        <h2 class="fade-in-title">À PROPOS DE MOI</h2>
+        <a href="asset/mon-cv.pdf" target="_blank" class="btn-cv">📄 Télécharger mon CV</a>
+        
+        <img src="images/maphoto.jpg" alt="Photo de Mouhamed Diouf" class="photo-profil">
+        
+        <p>
+            Je suis un étudiant motivé et passionné de géographie, doté d’une solide formation en analyse spatiale, cartographie et gestion des ressources environnementales. Mon parcours en Master 2 et Licence en Géographie m’a permis de développer une expertise technique ainsi qu’une méthodologie rigoureuse en recherche et analyse statistique. Je suis également reconnu pour mon sérieux, ma méticulosité, mon esprit d’équipe et mon autonomie.
+        </p>
+    </section>
+
+    <section id="formation">
+    <h2 class="fade-in-title">MON PARCOURS ACADÉMIQUE</h2>
+    
+    <div class="timeline">
+        
+        <div class="timeline-item">
+            <span class="timeline-date">En cours</span>
+            <h3>Master 2 Géographie : Ressources, Environnement, Développement</h3>
+            <p>Parcours Biogéographie • Université Cheikh Anta Diop, Dakar</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="timeline-date">2019 - 2023</span>
+            <h3>Licence en Géographie Physique</h3>
+            <p>Université Cheikh Anta Diop, Dakar</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="timeline-date">2018 - 2019</span>
+            <h3>Baccalauréat série L2</h3>
+            <p>Lycée de Diofior</p>
+        </div>
+
+    </div>
+</section>
+
+    <section id="experiences">
+    <h2 class="fade-in-title">EXPÉRIENCES</h2>
+    
+    <div class="timeline">
+        
+        <div class="timeline-item">
+            <span class="timeline-date">Mars 2021 – Aujourd’hui</span>
+            <h3>Chef de projet "Ambassadeurs de l’environnement"</h3>
+            <p>Organisation et coordination d'actions de sensibilisation sur la protection de l'environnement auprès des jeunes et des communautés locales .</p>
+            <p>Planification logistique et budgétaire des campagnes de reboisements, de nettoyages, et d'ateliers en collaboration avec les partenaires associatifs et municipaux.</p>
+            <p>Suivi et évaluation de l'impact des projet pour proposer des amélioration et assurer la pérennité des actions menées.</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="timeline-date">Août 2022 – Août 2023</span>
+            <h3>Adjoint Commission Pédagogique (CHGD)</h3>
+            <p>Participation à la préparation des activités pédagogiques (conférences, clubs, révisions collectives) pour renforcer la réussite des élèves et étudiants.</p>
+            <p>Appui à la conception d’outils et de supports pédagogiques pour les enseignants et encadrants du collectif.</p>
+            <p>Contribution à l’organisation et au suivi des réunions de la commission pour analyser les besoins et proposer des actions éducatives adaptées.</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="timeline-date">Juillet 2022 – Août 2023</span>
+            <h3>Adjoint Commission Pédagogique (AERD)</h3>
+            <p>Accompagnement pédagogique des nouveaux bacheliers et étudiants ressortissants de Diofior dans leurs choix d’orientation et leur intégration universitaire.</p>
+            <p> Mise en place et animation d’activités d’entraide (séances de révision, tutorat, ateliers méthodologiques) au sein de l’amicale.</p>
+            <p>Participation à la coordination entre la commission pédagogique et les autres cellules de l’amicale pour améliorer les conditions d’études et la solidarité entre membres.</p>
+        </div>
+
+    </div>
+</section>
+
+    <section id="competences">
+        <h2 class="fade-in-title">MES COMPÉTENCES</h2>
+        <ul>
+            <li>Maîtrise de l’analyse spatiale et de la cartographie</li>
+            <li>Utilisation des logiciels spécialisés : ArcGIS, QGIS, Magrit, Sphinx</li>
+            <li>Gestion des ressources environnementales</li>
+            <li>Étude de la biodiversité et de l’écologie</li>
+            <li>Méthodologie de recherche et analyse statistique</li>
+            <li>Communication et présentation de données géographiques</li>
+            <li>Maîtrise des outils bureautiques : Word, Excel, PowerPoint, Power BI, Access</li>
+        </ul>
+    </section>
+
+    <section id="projets">
+        <h2 class="fade-in-title">MES RÉALISATIONS</h2>
+        <p style="text-align:center; margin-bottom:40px;">Un aperçu de mes travaux en cartographie, analyse spatiale et gestion de données.</p>
+        
+        <div class="grid">
+            <div class="projet-card">
+                <div class="projet-img">
+                    <img src="images/projet1.png" alt="Carte thématique">
+                </div>
+                <div class="projet-info">
+                    <h3>Occupation du sol de la region de Fatick </h3>
+                    <p>Carte d'occupation du sol de la région de Fatick, élaborée pour analyser la distribution spatiale des différentes usages du territoire.</p>
+                    <div class="tags-container">
+                        <span class="tag">QGIS</span>
+                        <span class="tag">Cartographie</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projet-card">
+                <div class="projet-img">
+                    <img src="images/projet2.png" alt="Analyse de données">
+                </div>
+                <div class="projet-info">
+                    <h3>Occupation du sol de l'arrondissement de Fimela</h3>
+                    <p>Carte d'occupation du sol de l'arrondissement de Fimela, réalisée pour analyser la réparition des usages et dynamiques territoriales.</p>
+                    <div class="tags-container">
+                        <span class="tag">Excel</span>
+                        <span class="tag">Qgis</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="projet-card">
+                <div class="projet-img">
+                    <img src="images/projet3.jpg" alt="Gestion de projet">
+                </div>
+                <div class="projet-info">
+                    <h3>Géologie de la région de Dakar</h3>
+                    <p>Carte géologique détaillant les principales formations et structures de la région de Dakar, réaliser pour appuyer l'analyse environnementale et l'aménagement du territoire".</p>
+                    <div class="tags-container">
+                        <span class="tag">Arcgis</span>
+                        <span class="tag">Terrain</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificats">
+        <h2 class="fade-in-title">LICENCES ET CERTIFICATS</h2>
+        <div class="Certificat-container">
+            <div class="Certificat">
+                <img src="images/linkedinlogo.jpg" alt="Logo LinkedIn" class="logo">
+                <h3>Les fondements de la gestion de projet</h3>
+                <p>Émis par : <strong>LinkedIn</strong></p>
+                <a href="https://www.linkedin.com/learning/certificates/e4d0f1494eb3ed2c67c1f05bf24e6a2f29c8cf3907ffdaa51799d3ddb72d8d2d" target="_blank">Voir le certificat</a>
+            </div>
+
+            <div class="Certificat">
+                <img src="images/linkedinlogo.jpg" alt="Logo LinkedIn" class="logo">
+                <h3>Python pour la data science</h3>
+                <p>Émis par : <strong>LinkedIn</strong></p>
+                <a href="https://www.linkedin.com/learning/certificates/ebe5f0cf01383a5cb5032486bdd7dae7807992a0f61491959ce7b4f2b0231a46" target="_blank">Voir le certificat</a>
+            </div>
+
+            <div class="Certificat">
+                <img src="images/ifdd.jpg" alt="Logo IFDD" class="logo">
+                <h3>Métiers de l’environnement</h3>
+                <p>Émis par : <strong>IFDD</strong></p>
+                <a href="https://www.objectif2030.org/mooc/cert/p2GMoE/" target="_blank">Voir le certificat</a>
+            </div>
+
+            <div class="Certificat">
+                <img src="images/agencefrancaisededeveloppementlogo.jpg" alt="Logo AFD" class="logo">
+                <h3>Suivi et Évaluation d'un projet de développement</h3>
+                <p>Émis par : <strong>AFD</strong></p>
+                <a href="https://mooc-campus.afd.fr/admin/tool/certificate/index.php?code=9228290466MD" target="_blank">Voir le certificat</a>
+            </div>
+
+             <div class="Certificat">
+                <img src="images/linkedinlogo.jpg" alt="Logo LinkedIn" class="logo">
+                <h3>Rédiger un CV</h3>
+                <p>Émis par : <strong>LinkedIn</strong></p>
+                <a href="https://www.linkedin.com/learning/certificates/33607ad28de43b35f06f6e685ac6aa0bc79ad9772ab89437cb252d86b657255d" target="_blank">Voir le certificat</a>
+            </div>
+
+             <div class="Certificat">
+                <img src="images/ratatype.jpg" alt="Logo Ratatype" class="logo">
+                <h3>Certificat de dactylographie</h3>
+                <p>Émis par : <strong>Ratatype</strong></p>
+                <a href="https://www.ratatype.com/fr/u2540015/certificate/fr/" target="_blank">Voir le certificat</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="interets">
+        <h2 class="fade-in-title">CENTRES D'INTÉRÊTS ET ATOUTS</h2>
+        <div class="grid">
+            <div>
+                <h3>Centres d’intérêt</h3>
+                <ul>
+                    <li>La recherche géographique</li>
+                    <li>Sport : Football, Fitness</li>
+                    <li>Jeux d’esprits : Mots croisés</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Atouts</h3>
+                <ul>
+                    <li>Sérieux</li>
+                    <li>Méticuleux</li>
+                    <li>Esprit d’équipe</li>
+                    <li>Autonome</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Langues</h3>
+                <ul>
+                    <li>Français</li>
+                    <li>Anglais</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts">
+        <h2 class="fade-in-title">CONTACTS</h2>
+        <div id="ma-carte" style="height: 300px; width: 100%; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); z-index: 1;"></div>
+        <div class="contact-info">
+            <p>
+                <strong>Email :</strong> <a href="mailto:dioufmouhamed959@gmail.com">dioufmouhamed959@gmail.com</a><br>
+                <strong>Téléphone :</strong> 776992733 / 766295731<br>
+                <strong>Localisation :</strong> Dakar-Guédiawaye-Golf Sud<br>
+                <strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/mouhamed-diouf-" target="_blank">Profil LinkedIn</a>
+            </p>
+        </div>
+
+        <div class="contact-form-container">
+            <h3>Une question ou une collaboration en vue ?</h3>
+            <form>
+                <input type="text" placeholder="Nom" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" rows="5"></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="social-media">
+        <h2>Retrouvez-moi sur</h2>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/mouhamed-diouf-" target="_blank" class="social-btn linkedin">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/mhrassoul" target="_blank" class="social-btn twitter">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/mouhamedd__diouf" target="_blank" class="social-btn instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="mailto:mouhamed29.diouf@ucad.edu.sn" class="social-btn email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+    <p>Conçu et développé avec <i class="fa-solid fa-heart" style="color: #e74c3c;"></i> par <strong>Mouhamed Diouf</strong></p>
+    <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">Géographe & Data Analyst • Dakar, Sénégal</p>
+    <p style="font-size: 0.8rem; opacity: 0.5;">&copy; 2025 Tous droits réservés.</p>
+</footer>
+
+    <button id="scrollToTop" title="Retour en haut">⬆️</button>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <a href="https://wa.me/221776992733" class="whatsapp-btn" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+    <script>
+        // 1. Mode Sombre / Clair
+        const toggleButton = document.getElementById("mode-toggle");
+        if (localStorage.getItem("dark-mode") === "enabled") {
+            document.body.classList.add("dark-mode");
+            toggleButton.textContent = "☀️";
+        }
+        toggleButton.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("dark-mode", "enabled");
+                toggleButton.textContent = "☀️";
+            } else {
+                localStorage.setItem("dark-mode", "disabled");
+                toggleButton.textContent = "🌙";
+            }
+        });
+
+        // 2. Bouton Retour en haut
+        const scrollToTopButton = document.getElementById("scrollToTop");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollToTopButton.style.display = "block";
+            } else {
+                scrollToTopButton.style.display = "none";
+            }
+        });
+        scrollToTopButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // 3. Défilement fluide pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 4. Curseur personnalisé
+        const cursor = document.createElement("div");
+        cursor.classList.add("cursor");
+        document.body.appendChild(cursor);
+        document.addEventListener("mousemove", (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+
+        // 5. Effet Parallaxe sur la photo de profil
+        window.addEventListener("scroll", function () {
+            let profil = document.querySelector(".photo-profil");
+            if(profil) {
+                profil.style.transform = "translateY(" + window.scrollY / 5 + "px)";
+            }
+        });
+
+        // 6. Animation des logos (tilt effect)
+        document.querySelectorAll(".logo").forEach(logo => {
+            logo.addEventListener("mousemove", (e) => {
+                const { offsetX, offsetY } = e;
+                const moveX = (offsetX - 50) / 10;
+                const moveY = (offsetY - 50) / 10;
+                logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+            logo.addEventListener("mouseleave", () => {
+                logo.style.transform = "translate(0, 0)";
+            });
+        });
+
+        // 7. Transition de page (Fade Out)
+        document.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", function (event) {
+                // Ne s'active que si le lien change de page (pas les ancres #)
+                if (this.href.includes(window.location.origin) && !this.getAttribute('href').startsWith('#')) {
+                    event.preventDefault();
+                    document.body.classList.add("fade-out");
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 500);
+                }
+            });
+        });
+
+        /* // 8. Son au clic (Désactivé pour l'instant pour éviter les erreurs)
+        // Pour l'activer, crée un dossier 'sounds' et mets-y 'click.mp3'
+        /*
+        const buttonClickSound = new Audio("sounds/click.mp3");
+        document.querySelectorAll("button").forEach(button => {
+            button.addEventListener("click", () => {
+                buttonClickSound.play();
+            });
+        });
+        */
+        /* --- CONFIGURATION SCROLL REVEAL --- */
+const sr = ScrollReveal({
+    origin: 'bottom',     // Vient du bas
+    distance: '60px',     // Distance du glissement
+    duration: 1000,       // Durée 1 seconde
+    delay: 200,           // Petit délai
+    reset: true           // L'animation se rejoue si on remonte
+});
+
+// Liste des éléments à animer
+sr.reveal('.hero-content, .photo-profil, .gradient-title', {}); 
+sr.reveal('.section-accueil h2, .section-accueil p, .btn-cv', {delay: 400}); 
+sr.reveal('.social-links', {delay: 500}); 
+
+// Animation des sections principales (Titre à gauche)
+sr.reveal('.fade-in-title', {origin: 'left', distance: '100px'});
+
+// Animation des cartes et listes (en cascade avec intervalle)
+sr.reveal('.grid > div, .Certificat, #competences li, section ul li', {interval: 100}); 
+
+// Formulaire de contact
+sr.reveal('.contact-form-container', {origin: 'top'});
+
+/* --- CONFIGURATION DE LA CARTE LEAFLET --- */
+// 1. Initialiser la carte centrée sur Dakar (Coordonnées : 14.7167, -17.4677)
+var map = L.map('ma-carte').setView([14.7645, -17.3986], 12); // Zoom niveau 12 sur Guédiawaye/Dakar
+
+// 2. Ajouter le fond de carte (OpenStreetMap - Style standard)
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+// 3. Ajouter un marqueur sur ta zone (Approximatif pour la confidentialité)
+var marker = L.marker([14.7645, -17.3986]).addTo(map);
+marker.bindPopup("<b>Mouhamed Diouf</b><br>Dakar, Sénégal").openPopup();
+
+/* --- SCRIPT MACHINE À ÉCRIRE --- */
+const textElement = document.querySelector(".typing-text");
+// LISTE DES MÉTIERS : Tu peux changer les mots ici ! 👇
+const words = ["Géographe", "Analyste de Données", "Cartographe", "Utilisateur SIG",];
+
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+    const currentWord = words[wordIndex];
+    
+    if (isDeleting) {
+        // Effacer
+        textElement.textContent = currentWord.substring(0, charIndex--);
+    } else {
+        // Écrire
+        textElement.textContent = currentWord.substring(0, charIndex++);
+    }
+
+    // Vitesse de frappe (plus rapide quand on efface)
+    let typeSpeed = isDeleting ? 100 : 150;
+
+    if (!isDeleting && charIndex === currentWord.length) {
+        // Pause quand le mot est fini d'écrire
+        typeSpeed = 2000; 
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        // Passage au mot suivant quand tout est effacé
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        typeSpeed = 500;
+    }
+
+    setTimeout(typeEffect, typeSpeed);
+}
+
+// Lancer l'animation quand la page est chargée
+document.addEventListener('DOMContentLoaded', typeEffect);
+
+/* --- BARRE DE PROGRESSION --- */
+// Quand on scrolle, on lance la fonction
+window.onscroll = function() { myFunction() };
+
+function myFunction() {
+    // Calcul de la position actuelle
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    // Calcul de la hauteur totale de la page
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    // Pourcentage lu
+    var scrolled = (winScroll / height) * 100;
+    // On applique la largeur à la barre
+    document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+    </script>
+
+</body>
+</html>
