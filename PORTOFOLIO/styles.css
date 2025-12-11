@@ -1,0 +1,740 @@
+/* =========================================
+   1. VARIABLES & RESET MODERNE
+   ========================================= */
+:root {
+    /* Palette Eco-Tech */
+    --primary: #0ca789;       /* Vert Sarcelle vif */
+    --primary-dark: #087f6b;  /* Version foncée */
+    --accent: #2c3e50;        /* Bleu nuit pour le texte */
+    --bg-color: #f0f2f5;      /* Gris très clair bleuté */
+    --glass: rgba(255, 255, 255, 0.90); /* Effet verre */
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Ombre douce */
+    
+    /* Dark Mode Colors */
+    --dark-bg: #121212;
+    --dark-card: #1e1e1e;
+    --dark-text: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: var(--accent);
+    background-color: var(--bg-color);
+    background-image: radial-gradient(#0ca789 0.5px, transparent 0.5px), radial-gradient(#0ca789 0.5px, var(--bg-color) 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    overflow-x: hidden; /* Empêche le scroll horizontal */
+}
+
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
+header {
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    position: relative;
+    padding: 5px 0;
+    letter-spacing: 0.5px;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* =========================================
+   3. DESIGN DES CARTES (SECTIONS)
+   ========================================= */
+section {
+    padding: 60px 40px;
+    max-width: 1100px;
+    margin: 50px auto;
+    background: var(--glass);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255,255,255,1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Petite barre déco sur le côté */
+section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background: var(--primary);
+    opacity: 0.7;
+}
+
+h1, h2, h3 {
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+h2.fade-in-title {
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+h2.fade-in-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+/* =========================================
+   4. SECTION ACCUEIL (Hero)
+   ========================================= */
+.section-accueil {
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, #e0f7fa 100%);
+    border: none;
+}
+
+.gradient-title {
+    background: linear-gradient(to right, var(--accent), var(--primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+/* --- FIX: CENTRAGE PHOTO --- */
+.photo-profil {
+    display: block; /* Important pour le centrage */
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 10px 25px rgba(12, 167, 137, 0.4);
+    margin: 30px auto; /* Centre l'image */
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.btn-cv {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(to right, var(--primary), var(--primary-dark));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(12, 167, 137, 0.3);
+    margin-top: 20px;
+}
+
+.btn-cv:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(12, 167, 137, 0.5);
+}
+
+/* =========================================
+   5. LISTES ET COMPÉTENCES (Badges)
+   ========================================= */
+/* Style général des listes */
+ul { list-style: none; }
+section ul li { margin-bottom: 10px; }
+
+/* Style spécifique Compétences (Chips) */
+#competences ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+    justify-content: center; /* Centre les badges */
+}
+
+#competences ul li {
+    background: rgba(12, 167, 137, 0.1);
+    color: var(--primary-dark);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(12, 167, 137, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+#competences ul li::before {
+    content: "✔";
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+#competences ul li:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+#competences ul li::before:hover { color: white; }
+
+/* =========================================
+   6. GRILLES (Intérêts, Certificats)
+   ========================================= */
+.grid, .Certificat-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.grid > div, .Certificat {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--primary);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.Certificat:hover, .grid > div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.Certificat img.logo {
+    width: 70px;
+    height: auto;
+    margin-bottom: 15px;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.Certificat:hover img.logo { filter: grayscale(0%); }
+
+.Certificat a {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* =========================================
+   7. CONTACT (FIX: CENTRAGE)
+   ========================================= */
+.contact-info {
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 0 auto; /* Centre le formulaire */
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    background: #fafafa;
+    font-family: 'Poppins', sans-serif;
+}
+
+#contact button {
+    width: 100%;
+    padding: 15px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#contact button:hover { background: var(--primary); }
+
+/* =========================================
+   8. DARK MODE
+   ========================================= */
+body.dark-mode {
+    background-color: var(--dark-bg);
+    background-image: radial-gradient(#2c3e50 0.5px, transparent 0.5px);
+    color: var(--dark-text);
+}
+
+body.dark-mode section {
+    background: #1e1e1e;
+    border-color: #333;
+    box-shadow: none;
+}
+
+body.dark-mode .section-accueil {
+    background: linear-gradient(135deg, #1e1e1e 0%, #121212 100%);
+}
+
+body.dark-mode .grid > div,
+body.dark-mode .Certificat,
+body.dark-mode .contact-form-container {
+    background: #252525;
+    color: var(--dark-text);
+}
+
+body.dark-mode input, body.dark-mode textarea {
+    background: #333;
+    border-color: #444;
+    color: white;
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 { color: #fff; }
+
+/* Bouton Dark Mode */
+#mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--primary);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    z-index: 2000;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   9. FOOTER & SOCIAL
+   ========================================= */
+#social-media {
+    text-align: center;
+    padding: 20px;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+#social-media::before { display: none; } /* Enlève la barre verte déco */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.linkedin { background: #0077B5; }
+.twitter { background: #1DA1F2; }
+.instagram { background: #E4405F; }
+.email { background: #D44638; }
+
+.social-btn:hover { transform: scale(1.1) rotate(10deg); }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--accent);
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+/* =========================================
+   10. MOBILE RESPONSIVE (Dernière étape)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    section {
+        padding: 40px 20px;
+        margin: 20px 10px;
+    }
+
+    .gradient-title { font-size: 2rem; }
+    h2.fade-in-title { font-size: 1.5rem; }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul li a {
+        display: block;
+        background: rgba(255,255,255,0.1);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .photo-profil {
+        width: 140px;
+        height: 140px;
+    }
+
+    .btn-cv {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   12. NOUVELLES FONCTIONNALITÉS (Projets & WhatsApp)
+   ========================================= */
+
+/* --- Style des Cartes Projets --- */
+.projet-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0 !important; /* Force à enlever le padding par défaut des grilles */
+    border: none !important; /* Enlève la bordure du haut par défaut */
+    display: flex;
+    flex-direction: column;
+}
+
+.projet-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.projet-img {
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #eee; /* Gris en attendant l'image */
+}
+
+.projet-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.projet-card:hover .projet-img img {
+    transform: scale(1.1); /* Zoom sur l'image au survol */
+}
+
+.projet-info {
+    padding: 25px;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.projet-info h3 {
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+
+.projet-info p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.tags-container {
+    margin-top: auto; /* Pousse les tags vers le bas */
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(12, 167, 137, 0.1);
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 8px;
+    margin-bottom: 5px;
+}
+
+/* Mode sombre pour les projets */
+body.dark-mode .projet-card {
+    background: #252525;
+}
+body.dark-mode .projet-info p {
+    color: #bbb;
+}
+
+/* --- Style du Bouton WhatsApp --- */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 90px; /* Juste au-dessus du bouton "Retour en haut" */
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    background-color: #25D366; /* Vert officiel WhatsApp */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    background-color: #1ebc57;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6); /* Lueur verte */
+}
+
+/* Ajustement mobile pour éviter que les boutons se chevauchent */
+/* =========================================
+   VERSION MOBILE (CORRECTION MENU)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    
+    /* 1. On "détache" l'en-tête pour qu'il ne cache pas le texte */
+    header {
+        position: relative; /* Important : Le menu ne reste plus fixé en haut */
+        padding: 10px 0;
+    }
+
+    /* 2. On empile les liens mais en plus petit */
+    nav ul {
+        flex-direction: column;
+        gap: 10px; /* Moins d'espace entre les liens */
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 8px; /* Boutons moins gros */
+        background: rgba(255, 255, 255, 0.05); /* Fond léger pour séparer */
+        border-radius: 5px;
+    }
+
+    /* 3. On ajuste les titres et marges */
+    section {
+        margin-top: 0; /* Évite les gros espaces blancs */
+        padding: 30px 15px;
+    }
+    
+    .gradient-title {
+        font-size: 1.8rem; /* Titre plus petit */
+    }
+
+    /* 4. On s'assure que le contenu passe bien APRÈS le menu */
+    body {
+        padding-top: 0;
+    }
+}
+    }
+}
+
+/* --- EFFET MACHINE À ÉCRIRE --- */
+.sous-titre-anime {
+    font-size: 1.5rem;
+    color: var(--accent); /* Bleu nuit */
+    margin-bottom: 20px;
+    height: 30px; /* Fixe la hauteur pour éviter que ça saute */
+}
+
+.typing-text {
+    color: var(--primary); /* Ton vert Sarcelle */
+    font-weight: 800;
+    border-right: 3px solid var(--primary); /* Le curseur */
+    padding-right: 5px;
+    animation: blink 0.7s infinite; /* Clignotement */
+}
+
+/* Animation du curseur */
+@keyframes blink {
+    0%, 100% { border-color: var(--primary); }
+    50% { border-color: transparent; }
+}
+
+/* =========================================
+   13. STYLE DE LA TIMELINE (PARCOURS)
+   ========================================= */
+
+/* La ligne verticale principale */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 30px; /* Espace pour la ligne à gauche */
+}
+
+/* Le trait vertical */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: rgba(12, 167, 137, 0.2); /* Vert clair transparent */
+    border-radius: 2px;
+}
+
+/* Chaque étape (bloc) */
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    background: white; /* Fond blanc */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--primary); /* Petite barre verte déco */
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateX(10px); /* Décalage vers la droite au survol */
+}
+
+/* Le point (dot) sur la ligne */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -38px; /* On le place sur la ligne verticale */
+    top: 20px;   /* Alignement avec le titre */
+    width: 16px;
+    height: 16px;
+    background: var(--primary); /* Vert Sarcelle */
+    border: 3px solid white;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 0 3px rgba(12, 167, 137, 0.2); /* Effet d'aura */
+}
+
+/* Typographie de la timeline */
+.timeline-date {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-item h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+.timeline-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Mode sombre */
+body.dark-mode .timeline-item {
+    background: #252525;
+    border-left-color: var(--primary);
+}
+body.dark-mode .timeline-item p {
+    color: #bbb;
+}
+
+/* =========================================
+   14. BARRE DE PROGRESSION (SCROLL)
+   ========================================= */
+.progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; /* Épaisseur de la barre */
+    background: transparent; /* Fond invisible */
+    z-index: 9999; /* Toujours au-dessus de tout, même du menu */
+}
+
+.progress-bar {
+    height: 5px;
+    background: var(--primary); /* Ton vert Sarcelle */
+    width: 0%; /* Ça commence à 0 */
+    box-shadow: 0 0 10px var(--primary); /* Petit effet néon */
+    transition: width 0.1s ease-out;
+}
